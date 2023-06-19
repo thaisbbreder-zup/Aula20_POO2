@@ -24,6 +24,7 @@ public class Coordenadores extends Funcionarios {
 
     }
 
+
     public String getNome() {
         return nome;
     }

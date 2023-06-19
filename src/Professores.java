@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Professores extends Funcionarios {
+public class Professores extends Funcionarios{
 
     public String nivelGraduacao;
     public String disciplina;
@@ -20,12 +20,16 @@ public class Professores extends Funcionarios {
         this.estagiariosSupervisionados = new ArrayList<>();
     }
 
+    public Professores(String nomeProfessor, int cpfProfessor, int numRegistroProfessor, int orgaoLotacaoProfessor, double salarioProfessor) {
+        super(nomeProfessor, cpfProfessor, numRegistroProfessor, orgaoLotacaoProfessor, salarioProfessor);
+    }
+
     @Override
     public void aumentoSalario() {
         setSalario(getSalario() * 1.1);
     }
 
-    public void adicionaTurma() {
+    public void adicionaTurma(){
         qntTurmas++;
     }
 
@@ -56,7 +60,6 @@ public class Professores extends Funcionarios {
     public ArrayList<Estagiarios> getEstagiariosSupervisionados() {
         return estagiariosSupervisionados;
     }
-
     public void adicionaEstagiario(Estagiarios estagiario) {
         if (estagiariosSupervisionados.size() < 2) {
             estagiariosSupervisionados.add(estagiario);

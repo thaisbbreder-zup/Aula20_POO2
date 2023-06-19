@@ -3,20 +3,18 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner entradaDoUsuario = new Scanner(System.in);
         System.out.println("\n------------------------------------------------------------------------------");
         System.out.println("------------------------ INFORMAÇÕES DOS FUNCIONÁRIOS ------------------------");
 
         System.out.println("\nDigite o número do cargo do funcionário: \n1 - Coordenador \n2 - Professor \n3 - Administrativo \n4 - Estagiário");
-        int cargo = scanner.nextInt();
+        int cargo = entradaDoUsuario.nextInt();
 
         switch (cargo) {
             case 1:
                 Coordenadores coordenador1 = new Coordenadores("Maria Amélia De Carvalho", 987654321, 3, 2, 3000.0);
                 Professores professor1 = new Professores("Andréia Pires", 123456789, 1, 2, 2000.0, "Graduação", "Matemática", 30, 3);
-                Professores professor3 = new Professores("Carlos Schmitt", 987654321, 3, 2, 2500.0, "Mestrado", "Física", 20, 2);
-                coordenador1.adicionaProfessor(professor1);
-                coordenador1.adicionaProfessor(professor3);
+                 coordenador1.adicionaProfessor(professor1);
 
                 System.out.println("\nInformações do Coordenador:\n");
                 System.out.println("Nome: " + coordenador1.getNome());
@@ -31,6 +29,35 @@ public class Main {
                 System.out.println("Salário antes do aumento: " + coordenador1.getSalario());
                 coordenador1.aumentoSalario();
                 System.out.println("Salário após o aumento: " + coordenador1.getSalario());
+
+                System.out.println("\nGostaria de adicionar um novo professor para ser supervisionado? \n1 - SIM \n2 - NÃO");
+                String addProf = entradaDoUsuario.next();
+
+                if (addProf.equals("1") && coordenador1.getProfSupervisionados().size() <= 1){
+                    System.out.print("Digite o nome do professor(a): ");
+                    String nomeProfessor = entradaDoUsuario.next();
+                    System.out.print("Digite o CPF do professor(a): ");
+                    int cpfProfessor = entradaDoUsuario.nextInt();
+                    System.out.print("Digite o número de registro do professor(a): ");
+                    int numRegistroProfessor = entradaDoUsuario.nextInt();
+                    System.out.print("Digite o orgão de lotação do professor(a): ");
+                    int orgaoLotacaoProfessor = entradaDoUsuario.nextInt();
+                    System.out.print("Digite o salário do professor(a): ");
+                    double salarioProfessor = entradaDoUsuario.nextDouble();
+
+                    Professores novoProfessor = new Professores(nomeProfessor, cpfProfessor, numRegistroProfessor, orgaoLotacaoProfessor, salarioProfessor);
+                    coordenador1.adicionaProfessor(novoProfessor);
+
+                    System.out.println("Professor(a) adicionado com sucesso!");
+
+                    System.out.print("Professores Supervisionados: ");
+                    for (Professores professor : coordenador1.getProfSupervisionados()) {
+                        System.out.print(professor.getNome() + " | ");
+                    }
+                    System.out.println();
+                }else{
+                    System.out.println("ERRO: Limite máximo de professores supervisionados atingido!");
+                }
                 break;
 
             case 2:
