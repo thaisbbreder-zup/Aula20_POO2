@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Professores extends Funcionarios{
+public class Professores extends Funcionarios {
 
     public String nivelGraduacao;
     public String disciplina;
@@ -24,12 +24,8 @@ public class Professores extends Funcionarios{
         super(nomeProfessor, cpfProfessor, numRegistroProfessor, orgaoLotacaoProfessor, salarioProfessor);
     }
 
-    @Override
-    public void aumentoSalario() {
-        setSalario(getSalario() * 1.1);
-    }
 
-    public void adicionaTurma(){
+    public void adicionaTurma() {
         qntTurmas++;
     }
 
@@ -49,24 +45,38 @@ public class Professores extends Funcionarios{
         return qntTurmas;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public void adicionaEstagiarios(Estagiarios estagiario) {
+        if (estagiariosSupervisionados.size() < 2) {
+            estagiariosSupervisionados.add(estagiario);
+        } else {
+            System.out.println("Limite máximo de estagiários supervisionados atingido!");
+        }
 
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public ArrayList<Estagiarios> getEstagiariosSupervisionados() {
         return estagiariosSupervisionados;
     }
-    public void adicionaEstagiario(Estagiarios estagiario) {
-        if (estagiariosSupervisionados.size() < 2) {
-            estagiariosSupervisionados.add(estagiario);
-        } else {
-            System.out.println("Limite máximo de professores supervisionados atingido!");
+
+ 
+
+    public void exibirInformacoes(int cargo) {
+               System.out.println("\nInformações do Professor:\n");
+
+        super.exibirInformacoes(cargo);
+        System.out.println("Nível de Graduação: " +  getNivelGraduacao());
+        System.out.println("Disciplina: " +  getDisciplina());
+        System.out.println("Quantidade de Alunos: " + getQntAlunos());
+        System.out.println("Quantidade de Turmas: " + getQntTurmas());
+        System.out.print("Estagiarios Supervisionados: ");
+        for (Estagiarios estagiario : getEstagiariosSupervisionados()) {
+            System.out.print(estagiario.getNome() + " | ");
         }
+        System.out.println();
+
 
     }
+
+
 }
 

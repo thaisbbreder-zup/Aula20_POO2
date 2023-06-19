@@ -3,33 +3,14 @@ public class Estagiarios extends Professores {
         super(nome, cpf, numRegistro, orgaoLotacao, salario, nivelGraduacao, disciplina, 0, 0);
     }
 
-    @Override
-    public void aumentoSalario() {
-        setSalario(getSalario() * 1.1);
-    }
-
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getNumRegistro() {
-        return numRegistro;
-    }
-
-    public void setNumRegistro(int numRegistro) {
-        this.numRegistro = numRegistro;
-    }
-
-    public int getOrgaoLotacao() {
-        return orgaoLotacao;
-    }
-
-    public void setOrgaoLotacao(int orgaoLotacao) {
-        this.orgaoLotacao = orgaoLotacao;
+    public void exibirInformacoes(int cargo) {
+         System.out.println("\nInformações do Estagiário:\n");
+        super.exibirInformacoes(cargo);
+        System.out.println("Nível de Graduação: " + getNivelGraduacao());
+        System.out.println("Bolsa antes do aumento: " + getSalario());
+        aumentoSalario(cargo);
+        System.out.println("Bolsa após o aumento: " + getSalario());
     }
 }
+
 
