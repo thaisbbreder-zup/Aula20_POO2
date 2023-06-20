@@ -55,6 +55,10 @@ public class Professores extends Funcionarios {
 
     }
 
+    public void adicionaTurma(Turma turma) {
+        this.turma = turma;
+    }
+
     public ArrayList<Estagiarios> getEstagiariosSupervisionados() {
         return estagiariosSupervisionados;
     }
@@ -103,11 +107,8 @@ public class Professores extends Funcionarios {
             }
             System.out.println();
         } else {
-            System.out.println("ERRO: Limite máximo de estagiários supervisionados atingido!");
+            System.out.println("OK! Nenhuma alteração foi feita.");
         }
-
     }
-
-
 }
 

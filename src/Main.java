@@ -10,7 +10,7 @@ public class Main {
         System.out.println("\nDigite o número do cargo do funcionário: \n1 - Coordenador \n2 - Professor \n3 - Administrativo \n4 - Estagiário");
         int cargo = entradaDoUsuario.nextInt();
 
-        System.out.print("Informe o valor da despesa do mensal: ");
+        System.out.print("\nInforme o valor da despesa do mensal: ");
         double valorDespesa = entradaDoUsuario.nextDouble();
 
         switch (cargo) {
@@ -25,7 +25,16 @@ public class Main {
                 Professores professor2 = new Professores("Marcela Queiroz Silva", 111222333, 3, 5, 2700, "Mestrado", "Matematica", 10, 5);
                 Estagiarios estagiario1 = new Estagiarios("José Fernandes", 444555666, 4, 2, 600, "Graduação", "Estágio");
                 professor2.adicionaEstagiarios(estagiario1);
+                Turma turma1 = new Turma("T1", "Matemática", "Sala A");
+                professor2.adicionaTurma(turma1);
                 professor2.exibirInformacoes(cargo, valorDespesa);
+
+               System.out.print("Deseja adicionar mais uma turma para o professor? (1 - SIM, 2 - NÃO): ");
+                int opcao = entradaDoUsuario.nextInt();
+                if (opcao == 1) {
+                    Turma novaTurma = Turma.criarTurma(entradaDoUsuario);
+                    professor2.adicionaTurma(novaTurma);
+                }
                 break;
 
             case 3:
