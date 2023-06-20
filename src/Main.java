@@ -10,29 +10,32 @@ public class Main {
         System.out.println("\nDigite o número do cargo do funcionário: \n1 - Coordenador \n2 - Professor \n3 - Administrativo \n4 - Estagiário");
         int cargo = entradaDoUsuario.nextInt();
 
+        System.out.print("Informe o valor da despesa do mensal: ");
+        double valorDespesa = entradaDoUsuario.nextDouble();
+
         switch (cargo) {
             case 1:
                 Coordenadores coordenador1 = new Coordenadores("Maria Amélia De Carvalho", 987654321, 3, 2, 3000.0);
                 Professores professor1 = new Professores("Andréia Pires", 123456789, 1, 2, 2000.0, "Graduação", "Matemática", 30, 3);
                 coordenador1.adicionaProfessor(professor1);
-                coordenador1.exibirInformacoes(cargo);
+                coordenador1.exibirInformacoes(cargo, valorDespesa);
                 break;
 
             case 2:
                 Professores professor2 = new Professores("Marcela Queiroz Silva", 111222333, 3, 5, 2700, "Mestrado", "Matematica", 10, 5);
                 Estagiarios estagiario1 = new Estagiarios("José Fernandes", 444555666, 4, 2, 600, "Graduação", "Estágio");
                 professor2.adicionaEstagiarios(estagiario1);
-                professor2.exibirInformacoes(cargo);
+                professor2.exibirInformacoes(cargo, valorDespesa);
                 break;
 
             case 3:
                 Administrativos administrativo1 = new Administrativos("Maria Julia Muzzi", 161272344, 5, 1, 1500, "Assistente Administrativo", "Pleno");
-                administrativo1.exibirInformacoes(cargo);
+                administrativo1.exibirInformacoes(cargo, valorDespesa);
                 break;
 
             case 4:
                 Estagiarios estagiario2 = new Estagiarios("José Fernandes Rodrigues", 111222333, 3, 1, 500, "Graduação", "Estágio");
-                estagiario2.exibirInformacoes(cargo);
+                estagiario2.exibirInformacoes(cargo, valorDespesa);
                 break;
 
             default:

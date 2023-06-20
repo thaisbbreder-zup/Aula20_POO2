@@ -59,11 +59,11 @@ public class Professores extends Funcionarios {
         return estagiariosSupervisionados;
     }
 
-    public void exibirInformacoes(int cargo) {
+    public void exibirInformacoes(int cargo, double valorDespesa) {
         Scanner entradaDoUsuario = new Scanner(System.in);
         System.out.println("\nInformações do Professor:\n");
 
-        super.exibirInformacoes(cargo);
+        super.exibirInformacoes(cargo, valorDespesa);
         System.out.println("Nível de Graduação: " + getNivelGraduacao());
         System.out.println("Disciplina: " + getDisciplina());
         System.out.println("Quantidade de Alunos: " + getQntAlunos());

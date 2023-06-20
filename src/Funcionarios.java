@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Funcionarios {
 
     public String nome;
@@ -6,6 +8,7 @@ public class Funcionarios {
     public int orgaoLotacao;
 
     public double salario;
+
 
     public Funcionarios(String nome, int cpf, int numRegistro, int orgaoLotacao, double salario) {
         this.nome = nome;
@@ -17,6 +20,7 @@ public class Funcionarios {
 
     public Funcionarios() {
     }
+
 
     public String getNome() {
         return nome;
@@ -46,14 +50,15 @@ public class Funcionarios {
         }
     }
 
-    public void exibirInformacoes(int cargo) {
+    public void exibirInformacoes(int cargo, double valorDespesa) {
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());
         System.out.println("Número de Registro: " + getNumRegistro());
         System.out.println("Orgão de Lotação: " + getOrgaoLotacao());
-        System.out.println("Salário antes do aumento: " +  getSalario());
-         aumentoSalario(cargo);
-        System.out.println("Salário após o aumento: " +  getSalario());
+        System.out.println("Salário antes do aumento: " + getSalario());
+        aumentoSalario(cargo);
+        System.out.println("Salário após o aumento: " + getSalario());
+        System.out.println("Despesa do mês: " + valorDespesa);
     }
 
 }

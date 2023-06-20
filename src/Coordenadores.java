@@ -23,13 +23,13 @@ public class Coordenadores extends Funcionarios {
         return profsSupervisionados;
     }
 
-    public void exibirInformacoes(int cargo) {
+    public void exibirInformacoes(int cargo, double valorDespesa) {
         Scanner entradaDoUsuario = new Scanner(System.in);
 
 
 
         System.out.println("\nInformações do Coordenador:\n");
-        super.exibirInformacoes(cargo);
+        super.exibirInformacoes(cargo, valorDespesa);
         System.out.print("Professores Supervisionados: ");
         for (Professores professor : getProfSupervisionados()) {
             System.out.print(professor.getNome() + " | ");
