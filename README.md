@@ -1,34 +1,31 @@
-# Aula20_POO2
-
-
-## 🎓 Sistema de Funcionários 🎓   
+# 🎓 Sistema de Funcionários 🎓   
 
 Neste projeto, modelamos as classes relacionadas aos funcionários de uma universidade, incluindo professores, coordenadores, funcionários administrativos e estagiários.
 
 ### Atributos ✏️
-Todos os funcionários possuem os seguintes atributos em comum:
-
+__Todos os funcionários possuem os seguintes atributos em comum:__
 - Nome
 - CPF
 - Número de registro
 - Órgão de lotação
 - Salário
 <br>
-Professores possuem os seguintes atributos adicionais:
-
+ 
+__Professores possuem os seguintes atributos adicionais:__
 - Nível de graduação
 - Disciplina ministrada
 - Quantidade de alunos
 - Quantidade de turmas
 <br>
-Coordenadores possuem os seguintes atributos adicionais:
-
+  
+__Coordenadores possuem os seguintes atributos adicionais:__
 - Professores supervisionados
 <br>
-Funcionários administrativos possuem os seguintes atributos adicionais:
-
+ 
+__Funcionários administrativos possuem os seguintes atributos adicionais:__
 - Função administrativa
 - Senioridade
+<br>
 
 ### Métodos 📚
 Além dos getters, setters e construtores, foram implementados os seguintes métodos:
@@ -36,10 +33,12 @@ Além dos getters, setters e construtores, foram implementados os seguintes mét
 - aumentoSalario(): Aumenta o salário em 10% para todos os funcionários, exceto coordenadores (aumento de 5% para coordenadores).
 - adicionaTurma(): Adiciona uma nova turma para os professores.
 - adicionaProfessor(): Adiciona um novo professor à lista de professores supervisionados para os coordenadores.
+<br>
 
 ### Desafio Extra 🚀
 Adicionar a classe Turma, como uma característica dos professores por meio de composição.
 Limitar a quantidade de professores supervisionados na classe Coordenador.
+<br>
 
 ### Resultado 
 
